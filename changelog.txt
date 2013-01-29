@@ -1,0 +1,51 @@
+Change Log:
+===========
+
+v1.5.x
+-----------
+* Minor UI improvements (icons, convert log window)
+* Prevented the grid and buttons from being disabled when the upload starts
+* Fix GO button: The go button will only start a file that is in "Queued", 
+  "Aborted", or "Upload Failed" statuses, so clicking multiple times will not 
+  cause the previous issue
+* Updated Remove Buttons: Will not remove any items from the queue that are 
+  processing
+* Prevents dropping any files into the queue that are not JPG files
+* Changed many of the error messages to make them more useful/informative
+* Fixed bug when selecting no project
+* Security: 
+	o Added user and project info to all the Ajax calls for security on the 
+	  back end (loading project/store/column list)
+	o Project, column, and store lists will only display information that 
+	  the user has permission to as set in the IPM Security Administrator
+	o Store list is further filtered to the stores that are added to the 
+	  selected project
+* Progress Bar is more accurate
+* More useful statuses when the file is processing
+* Upload progress percentage
+* Upload timeouts: time limits have been implemented to prevent hanging during 
+  upload
+* Monitor FTP and HTTP status codes, reports failures, and aborts the upload
+* New Context Menu:
+	o Abort: Abort an upload/thread after the current sub process has 
+	  completed
+	o Restart: Start/Restart an upload in the "Queued", "Aborted", 
+	  "Canceled", or "Upload Failed" statuses
+	o Cancel: Cancel an upload
+* Updated convert log with more information
+* Settings Dialog: Added the ability to save default application values
+	o Default Site
+	o Image temp directory
+	o Thread Count (the amount of simultaneous uploads, 1-10)
+* Option on login dialog to save login info (base64 encrypts in ini file)
+* Moved site information from www.hki.com to www.hkipm.com
+* Moved backend completely into the IPM
+	o Project, column, and store lists come from the project panel module 
+	  in the IPM
+	o Posting upload to the IPM goes to the same location as uploading a 
+	  file directly through the site
+	o The app can now read the responses from posting a file during the 
+	  upload and display them
+* Each site proves the ftp host, user, pass, and port (all base64 encrypted)
+* Other Bug fixes
+
